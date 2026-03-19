@@ -3,43 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficiální portál KHDL</title>
+    <title>Portál pro občany | KHDL</title>
     <style>
-        body { font-family: 'Georgia', serif; line-height: 1.6; color: #333; max-width: 800px; margin: auto; padding: 20px; background-color: #f4f4f2; }
-        header { border-bottom: 2px solid #2d5a27; padding-bottom: 20px; text-align: center; }
-        .logo { font-size: 24px; font-weight: bold; color: #2d5a27; letter-spacing: 2px; }
-        nav { margin: 20px 0; text-align: center; }
-        nav a { margin: 0 15px; text-decoration: none; color: #555; font-weight: bold; }
-        .hero { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-top: 20px; }
-        h1 { color: #2d5a27; }
-        footer { margin-top: 50px; font-size: 0.8em; text-align: center; color: #777; border-top: 1px solid #ddd; padding-top: 20px; }
+        :root {
+            --dark-green: #1b3022; 
+            --light-green: #4f6d3d; 
+            --gold: #c5a059;
+            --white: #f4f4f4;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--white);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(to bottom, var(--dark-green) 50%, var(--light-green) 50%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .logo-placeholder {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            border-top: 5px solid var(--gold);
+            text-align: center;
+        }
+
+        h2 {
+            color: var(--dark-green);
+        }
+
+        .doc-preview {
+            text-align: left;
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .doc-item::before {
+            content: "📄";
+            margin-right: 10px;
+        }
+
+        /* TLAČÍTKO SMĚŘUJÍCÍ NA DOKUMENTY PRO OBČANY */
+        .btn-citizens {
+            display: inline-block;
+            background-color: var(--dark-green);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-top: 20px;
+        }
+
+        .btn-citizens:hover {
+            background-color: var(--light-green);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.85rem;
+            color: #888;
+        }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo">KHDL</div>
-    <div>Konfederace Horního a Dolního lesa</div>
+    <div class="logo-placeholder">🌲</div>
+    <h1>Konfederace Horního a Dolního lesa</h1>
+    <p>Informační uzel pro obyvatele a návštěvníky</p>
 </header>
 
-<nav>
-    <a href="#">Domů</a>
-    <a href="#ustava">Ústava</a>
-    <a href="#mapa">Teritorium</a>
-    <a href="#kontakt">Kontakt</a>
-</nav>
+<div class="container">
+    <div class="info-box">
+        <h2>Vstup do občanské zóny</h2>
+        <p>Hledáte informace o státním občanství, právech v lese nebo vzory průkazů? Všechny veřejně dostupné dokumenty naleznete v našem zabezpečeném archivu.</p>
+        
+        <div class="doc-preview">
+            <div class="doc-item">Zákon o státním občanství</div>
+            <div class="doc-item">Text slavnostního slibu KHDL</div>
+            <div class="doc-item">Manuál práv a svobod obyvatel</div>
+            <div class="doc-item">Vzor identifikačního průkazu</div>
+        </div>
 
-<div class="hero">
-    <h1>Vítejte na území KHDL</h1>
-    <p>Konfederace Horního a Dolního lesa je autonomní entita založená za účelem správy, ochrany a vědeckého průzkumu lesních ekosystémů.</p>
-    
-    <h2 id="ustava">Základní principy</h2>
-    <p>Náš stát se řídí principy udržitelnosti, respektu k přírodnímu řádu a transparentní správy. Každý občan KHDL je zavázán k ochraně svěřeného území.</p>
+        <a href="https://github.com/bdinkatomas-dev/KHDL" class="btn-citizens">
+            OTEVŘÍT DOKUMENTY PRO OBČANY
+        </a>
+        
+        <p style="margin-top: 20px; font-style: italic; font-size: 0.9rem;">
+            Poznámka: Přístup k vládním a bezpečnostním protokolům je omezen pouze na správu státu.
+        </p>
+    </div>
 </div>
 
 <footer>
-    <p>Oficiální komunikační kanál: <a href="mailto:sprava.khdl@proton.me">sprava.khdl@proton.me</a></p>
-    <p>&copy; 2024 Správa Konfederace KHDL. Všechna práva vyhrazena.</p>
+    <p>Oficiální digitální brána KHDL &copy; 2026<br>Správa Distriktu Superior</p>
 </footer>
 
 </body>
