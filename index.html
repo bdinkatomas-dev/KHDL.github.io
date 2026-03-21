@@ -4,220 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Státní portál KHDL | Klobouky u Brna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --dark-green: #1b3022; /* Horní pole vlajky */
-            --light-green: #4f6d3d; /* Dolní pole vlajky */
-            --gold: #c5a059;
-            --white: #f4f4f4;
-            --text: #2c3e50;
+            --khdl-dark: #1b3022;
+            --khdl-leaf: #4f6d3d;
+            --khdl-gold: #c5a059;
+            --bg-light: #f4f7f6;
         }
 
         body {
-            font-family: 'Segoe UI', 'Georgia', serif;
+            font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: var(--white);
-            color: var(--text);
-            line-height: 1.6;
+            background-color: var(--bg-light);
+            color: #333;
         }
 
-        /* HLAVIČKA - REPREZENTUJE VLAJKU */
+        .gov-header-bar {
+            background: #000;
+            color: #aaa;
+            padding: 8px;
+            font-size: 10px;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         header {
-            background: linear-gradient(to bottom, var(--dark-green) 50%, var(--light-green) 50%);
+            background: linear-gradient(135deg, var(--khdl-dark) 0%, var(--khdl-leaf) 100%);
             color: white;
             padding: 60px 20px;
             text-align: center;
-            border-bottom: 5px solid var(--gold);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border-bottom: 5px solid var(--khdl-gold);
         }
 
-        .header-content h1 {
-            margin: 0;
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-        }
-
-        .header-content p {
-            font-style: italic;
-            opacity: 0.9;
-            margin-top: 10px;
-        }
+        .seal { font-size: 50px; margin-bottom: 10px; }
 
         .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            max-width: 1100px;
+            margin: -30px auto 50px;
             display: grid;
-            grid-template-columns: 2fr 1fr; /* Rozvržení: Hlavní obsah vlevo, Počasí vpravo */
-            gap: 30px;
+            grid-template-columns: 1.8fr 1.2fr;
+            gap: 25px;
+            padding: 0 20px;
         }
 
-        @media (max-width: 768px) {
-            .container { grid-template-columns: 1fr; }
-        }
-
-        /* BLOKY OBSAHU */
-        .main-card {
+        .card {
             background: white;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        h2 { color: var(--khdl-dark); border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; }
+
+        /* MONITORING STATUS */
+        #status-indicator {
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--dark-green);
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border: 2px solid;
+            transition: 0.3s;
         }
 
-        .side-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--gold);
-            height: fit-content;
-        }
-
-        h2 {
-            color: var(--dark-green);
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-
-        /* SEZNAM DOKUMENTŮ */
-        .doc-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .doc-list li {
-            padding: 12px 15px;
-            background: #fdfdfd;
-            border: 1px solid #eee;
-            margin-bottom: 8px;
-            border-radius: 4px;
+        /* STYLOVÁNÍ ODKAZŮ PRO STAŽENÍ */
+        .download-list { list-style: none; padding: 0; }
+        .download-item {
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #fafafa;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid var(--khdl-leaf);
             transition: 0.2s;
         }
+        .download-item:hover { background: #f0f0f0; transform: translateX(5px); }
 
-        .doc-list li:hover {
-            border-color: var(--gold);
-            background: #f9f6f0;
-        }
-
-        .status-tag {
-            font-size: 0.75rem;
-            background: var(--light-green);
+        .btn-download {
+            background: var(--khdl-dark);
             color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            text-transform: uppercase;
-        }
-
-        /* TLAČÍTKO GITHUB */
-        .cta-section {
-            text-align: center;
-            grid-column: 1 / -1; /* Roztáhne se přes oba sloupce */
-            padding: 40px;
-            background: var(--dark-green);
-            color: white;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-
-        .btn-citizen {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--dark-green);
             text-decoration: none;
-            padding: 18px 40px;
-            font-weight: bold;
-            border-radius: 50px;
-            font-size: 1.2rem;
-            transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        .btn-citizen:hover {
-            transform: translateY(-3px);
-            background: white;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        iframe {
+            padding: 8px 15px;
             border-radius: 5px;
-            width: 100%;
+            font-size: 12px;
+            font-weight: bold;
         }
+
+        .btn-download:hover { background: var(--khdl-gold); color: var(--khdl-dark); }
+
+        .economy-box {
+            background: #fffdf2;
+            border: 1px solid var(--khdl-gold);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        footer { text-align: center; padding: 40px; color: #888; font-size: 12px; }
+
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
+<div class="gov-header-bar">Oficiální digitální uzel Konfederace KHDL • Verze 3.0</div>
+
 <header>
-    <div class="header-content">
-        <h1>Konfederace Horního a Dolního lesa</h1>
-        <p>Svrchovanost • Ochrana • Tradice</p>
-    </div>
+    <div class="seal">🌲</div>
+    <h1>Konfederace Horního a Dolního lesa</h1>
+    <p>Svrchovaná správa biomu Klobouky u Brna</p>
 </header>
 
 <div class="container">
     
-    <main class="main-card">
-        <h2>Vládní věstník a legislativa</h2>
-        <p>Oficiální sbírka zákonů KHDL. Dokumenty jsou závazné pro všechny osoby zdržující se v distriktech Superior a Inferior.</p>
-        
-        <ul class="doc-list">
-            <li><span>01_Ústava_KHDL.pdf</span> <span class="status-tag">Platné</span></li>
-            <li><span>02_Lesní_zákoník.pdf</span> <span class="status-tag">Platné</span></li>
-            <li><span>03_Bezpečnostní_protokol.pdf</span> <span class="status-tag">Platné</span></li>
-            <li><span>04_Diplomatický_protokol.pdf</span> <span class="status-tag">Platné</span></li>
-            <li><span>05_Archivní_řád.pdf</span> <span class="status-tag">Platné</span></li>
-        </ul>
-
-        <h2 style="margin-top: 30px;">Zóna pro občany</h2>
-        <p>Informace pro držitele státní příslušnosti a žadatele o naturalizaci.</p>
-        <ul class="doc-list">
-            <li><span>06_Zákon_o_občanství.pdf</span> <span class="status-tag" style="background:var(--gold)">Veřejné</span></li>
-            <li><span>07_Manuál_identifikace_ID.pdf</span> <span class="status-tag" style="background:var(--gold)">Veřejné</span></li>
-        </ul>
-    </main>
-
-    <aside class="side-card">
-        <h2>Stav Biomu</h2>
-        <p style="font-size: 0.9rem;">Lokalita: Klobouky u Brna</p>
-        
-        <iframe src="https://open-meteo.com/embed?latitude=49.0906&longitude=16.7032&timezone=Europe%2FBerlin&temperature_unit=celsius&wind_speed_unit=kmh&precipitation_unit=mm" width="100%" height="230" frameborder="0" scrolling="no" allowtransparency="true" style="border-radius: 5px;">
-        </iframe>
-
-        <div style="margin-top: 20px; font-size: 0.85rem; padding: 10px; background: #fff9eb; border: 1px solid #ffeeba; border-radius: 4px;">
-            <strong>Výstraha SOL:</strong><br>
-            Při rychlosti větru nad 15 m/s je vstup do lesního porostu zakázán.
+    <div class="main">
+        <div class="card">
+            <h2>📂 Sbírka zákonů (Direct Download)</h2>
+            <p style="font-size: 13px; color: #666;">Kliknutím na tlačítko stáhnete PDF přímo z vládního archivu.</p>
+            
+            <div class="download-list">
+                <div class="download-item">
+                    <span>01 | Ústava KHDL</span>
+                    <a href="https://raw.githubusercontent.com/bdinkatomas-dev/KHDL/main/01_ZAKLADNI_DOKUMENTY/01_USTAVA_KHDL.pdf" class="btn-download" download>STÁHNOUT</a>
+                </div>
+                <div class="download-item">
+                    <span>02 | Lesní zákoník</span>
+                    <a href="https://raw.githubusercontent.com/bdinkatomas-dev/KHDL/main/01_ZAKLADNI_DOKUMENTY/02_LESNI_ZAKONIK.pdf" class="btn-download" download>STÁHNOUT</a>
+                </div>
+                <div class="download-item">
+                    <span>06 | Zákon o občanství</span>
+                    <a href="https://raw.githubusercontent.com/bdinkatomas-dev/KHDL/main/02_OBCANSKE_ZALEZITOSTI/06_ZAKON_O_OBCANSTVI.pdf" class="btn-download" download>STÁHNOUT</a>
+                </div>
+                <div class="download-item">
+                    <span>11 | Hospodářský řád (LL)</span>
+                    <a href="https://raw.githubusercontent.com/bdinkatomas-dev/KHDL/main/03_HOSPODARSTVI_A_EKOLOGIE/11_HOSPODARSKY_RAD.pdf" class="btn-download" download>STÁHNOUT</a>
+                </div>
+            </div>
         </div>
-    </aside>
 
-    <section class="cta-section">
-        <h2>Digitální archiv GitHub</h2>
-        <p>Kompletní verze dokumentů ke stažení a správa issues pro hlášení stavu lesa.</p>
-        <br>
-        <a href="https://github.com/bdinkatomas-dev/KHDL" class="btn-citizen" target="_blank">
-            VSTOUPIT DO ARCHIVU OBČANA
-        </a>
-    </section>
+        <div class="card" style="margin-top: 25px;">
+            <h2>💰 Ekonomika: Lesní lístek (LL)</h2>
+            <div class="economy-box">
+                <span style="font-size: 24px; font-weight: bold; color: var(--khdl-leaf);">1 LL = 1.00 Kyslíková jednotka</span>
+                <p style="font-size: 12px; margin-top: 10px;">Měna je kryta 100% biomasou Distriktu Superior.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="card">
+            <h2>🌤️ Monitoring biomu</h2>
+            
+            <div id="status-indicator">
+                <span id="status-text">ZJIŠŤOVÁNÍ STAVU...</span>
+            </div>
+
+            <iframe src="https://www.meteoblue.com/en/weather/widget/three/klobouky-u-brna_czech-republic_3073539?geoloc=fixed&nocurrent=0&noforecast=1&days=4&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=light"  
+                frameborder="0" scrolling="NO" allowtransparency="true" 
+                style="width: 100%; height: 230px; border-radius: 8px;">
+            </iframe>
+        </div>
+
+        <div class="card" style="margin-top: 25px; background: var(--khdl-dark); color: white;">
+            <h2>📍 Mapa území</h2>
+            <div style="height: 150px; border: 1px dashed var(--khdl-gold); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px;">
+                KLASIFIKOVANÝ PŘÍSTUP (SOL)
+            </div>
+        </div>
+    </div>
 
 </div>
 
 <footer>
-    <p>
-        Oficiální portál Konfederace Horního a Dolního lesa © 2026<br>
-        Spravováno Kanceláří Správce | Hostováno na GitHub Pages
-    </p>
+    <p>© 2026 Konfederace Horního a Dolního lesa<br>Digitální suverenita zajištěna Kanceláří Správce</p>
 </footer>
+
+<script>
+    // NASTAVENÍ STAVU: 1=Zelená, 2=Žlutá, 3=Červená
+    const KHDL_STATUS = 1; 
+
+    const box = document.getElementById('status-indicator');
+    const text = document.getElementById('status-text');
+
+    if (KHDL_STATUS === 1) {
+        box.style.backgroundColor = "#e8f5e9"; box.style.borderColor = "#2e7d32"; box.style.color = "#1b5e20";
+        text.innerText = "🟢 STAV: BEZPEČNÝ VSTUP";
+    } else if (KHDL_STATUS === 2) {
+        box.style.backgroundColor = "#fffde7"; box.style.borderColor = "#fbc02d"; box.style.color = "#f57f17";
+        text.innerText = "🟡 STAV: ZVÝŠENÁ OPATRNOST";
+    } else {
+        box.style.backgroundColor = "#ffebee"; box.style.borderColor = "#c62828"; box.style.color = "#b71c1c";
+        text.innerText = "🔴 STAV: NEBEZPEČÍ - VSTUP ZAKÁZÁN";
+    }
+</script>
 
 </body>
 </html>
