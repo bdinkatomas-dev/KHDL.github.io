@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>bdinkatomas-dev</title>
 
+<!-- CSS je inline, aby fungoval web jen s tímto souborem -->
 <style>
 /* ZÁKLADNÍ STYL */
 body {
     margin: 0;
     font-family: "Inter", "Segoe UI", sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
-    scroll-behavior: smooth;
+    background: #0d1117; /* tmavé pozadí */
+    color: #c9d1d9;      /* světle šedý text */
+    scroll-behavior: smooth; /* hladké scrollování */
 }
 
 /* HLAVIČKA */
@@ -22,16 +23,16 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 20px 40px;
-    background: #0d1117;
-    border-bottom: 1px solid #21262d;
+    background: #0d1117; /* stejná barva jako pozadí */
+    border-bottom: 1px solid #21262d; /* oddělení hlavičky */
     z-index: 1000;
 }
 
-/* LOGO */
+/* LOGO (tvé jméno) */
 .logo {
     font-size: 16px;
     font-weight: 600;
-    color: #58a6ff;
+    color: #58a6ff; /* modrá, kontrastní */
 }
 
 /* NAVIGACE */
@@ -44,12 +45,12 @@ nav a {
 }
 
 nav a:hover {
-    color: #58a6ff;
+    color: #58a6ff; /* změna barvy při hover */
 }
 
-/* HERO */
+/* HERO SEKCE */
 .hero {
-    height: 100vh;
+    height: 100vh; /* zabere celou výšku okna */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,10 +69,10 @@ nav a:hover {
     max-width: 500px;
 }
 
-/* SEKCE */
+/* SEKCE (projekty, devlogy, o mně) */
 .section {
     padding: 100px 15%;
-    border-top: 1px solid #21262d;
+    border-top: 1px solid #21262d; /* oddělení sekcí */
 }
 
 .section h2 {
@@ -80,16 +81,16 @@ nav a:hover {
     color: white;
 }
 
-/* GRID */
+/* GRID pro karty */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responzivní sloupce */
     gap: 20px;
 }
 
-/* KARTA / ODKAZ */
+/* KARTA (projekty, devlogy) */
 .card {
-    display: block; /* pro <a> */
+    display: block; /* aby šla celá karta kliknout, i když je <a> */
     background: #161b22;
     padding: 20px;
     border: 1px solid #21262d;
@@ -101,8 +102,8 @@ nav a:hover {
 }
 
 .card:hover {
-    border-color: #58a6ff;
-    transform: translateY(-3px);
+    border-color: #58a6ff; /* zvýraznění při hover */
+    transform: translateY(-3px); /* jemný pohyb */
 }
 
 .card h3 {
@@ -122,8 +123,9 @@ footer {
 </head>
 <body>
 
+<!-- HLAVIČKA -->
 <header>
-    <div class="logo">bdinkatomas-dev</div>
+    <div class="logo">bdinkatomas-dev</div> <!-- logo = tvé jméno -->
     <nav>
         <a href="#projekty">projekty</a>
         <a href="#devlogy">devlogy</a>
@@ -131,29 +133,32 @@ footer {
     </nav>
 </header>
 
+<!-- HERO SEKCE -->
 <section class="hero">
-    <h1>bdinkatomas-dev</h1>
-    <p>Student a developer zaměřený na tvorbu moderních webových aplikací, UI design a experimentální projekty.</p>
+    <h1>bdinkatomas-dev</h1> <!-- hlavní nadpis -->
+    <p>
+        Student a developer zaměřený na tvorbu moderních webových aplikací,
+        UI design a experimentální projekty.
+    </p>
 </section>
 
+<!-- SEKCE PROJEKTY -->
 <section id="projekty" class="section">
     <h2>projekty</h2>
     <div class="grid">
+        <!-- Github karta (klikací) -->
         <a href="https://github.com/bdinkatomas-dev/bdinkatomas-dev" target="_blank" class="card">
             <h3>Github</h3>
             <p>Osobní prezentace a UI experimenty</p>
         </a>
-        <div class="card">
-            <h3>Webové aplikace</h3>
-            <p>Frontend logika a interaktivní prvky</p>
-        </div>
-        <div class="card">
+       <div class="card">
             <h3>Později</h3>
             <p></p>
         </div>
     </div>
 </section>
 
+<!-- SEKCE DEVLOGY -->
 <section id="devlogy" class="section">
     <h2>devlogy</h2>
     <div class="grid">
@@ -168,18 +173,19 @@ footer {
     </div>
 </section>
 
+<!-- SEKCE O MNĚ -->
 <section id="omne" class="section">
     <h2>o mně</h2>
-    <p>Chodím na gymnázium, snažím se vytvářet a vyvíjet webové aplikace, programy a hry a také open source projekty dostupné na Linuxu.</p>
+    <p>
+        Chodím na gymnázium, snažím se vytvářet a vyvíjet webové aplikace,
+        programy a hry a také open source projekty dostupné na Linuxu.
+    </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
     © 2026 Tomáš Bdinka
 </footer>
 
 </body>
-</html>
-
-</body>
-</html>
 </html>
