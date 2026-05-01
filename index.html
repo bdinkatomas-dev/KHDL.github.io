@@ -5,250 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>bdinkatomas-dev</title>
 
-<link rel="icon" type="image/svg+xml" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="%2358a6ff"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="40" fill="white" font-family="Inter,Arial,sans-serif">B</text></svg>'>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
-    margin: 0;
-    font-family: "Inter", "Segoe UI", sans-serif;
-    background: #0d1117;
-    color: #c9d1d9;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter, sans-serif;
 }
 
-/* HEADER */
-header {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    background: rgba(13, 17, 23, 0.7);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(33, 38, 45, 0.6);
-    z-index: 1000;
+body{
+    background:#0b0f17;
+    color:#e6e6e6;
 }
 
-.logo {
-    font-size: 16px;
-    font-weight: 600;
-    color: #58a6ff;
-    margin-right: 50px;
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    padding:22px;
+    background:rgba(11,15,23,0.6);
+    backdrop-filter: blur(18px);
+    border-bottom:1px solid rgba(255,255,255,0.04);
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+nav a{
+    color:#9aa4b2;
+    margin:0 18px;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.2s;
 }
 
-nav a {
-    color: #c9d1d9;
-    margin: 0 15px;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.2s;
-}
-
-nav a:hover {
-    color: #58a6ff;
+nav a:hover{
+    color:white;
 }
 
 /* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 15%;
-    opacity: 0;
-    transform: translateY(40px);
-    animation: fadeIn 1s forwards;
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 20px;
 }
 
-.hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-    color: white;
+.hero h1{
+    font-size:72px;
+    letter-spacing:-3px;
+    font-weight:700;
 }
 
-.hero p {
-    font-size: 18px;
-    color: #8b949e;
-    max-width: 500px;
+.hero p{
+    margin-top:18px;
+    max-width:650px;
+    color:#9aa4b2;
+    font-size:18px;
+    line-height:1.6;
 }
 
-#aktualni-cas {
-    margin-top: 10px;
-    color: #58a6ff;
+/* SECTION */
+section{
+    padding:140px 10%;
 }
 
-/* SECTIONS */
-.section {
-    padding: 100px 15%;
-    border-top: 1px solid rgba(33, 38, 45, 0.6);
-
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+h2{
+    font-size:40px;
+    letter-spacing:-1px;
 }
 
-.section.show {
-    opacity: 1;
-    transform: translateY(0);
+.sub{
+    color:#9aa4b2;
+    margin-top:10px;
 }
 
-.section h2 {
-    font-size: 22px;
-    margin-bottom: 30px;
-    color: white;
+/* PROJECT GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:24px;
+    margin-top:50px;
 }
 
-/* GRID */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+/* CARD */
+.card{
+    padding:28px;
+    border-radius:18px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.06);
+    transition:0.3s;
 }
 
-/* GLASS CARD */
-.card {
-    background: rgba(22, 27, 34, 0.6);
-    padding: 20px;
-    border: 1px solid rgba(33, 38, 45, 0.6);
-    border-radius: 12px;
-    backdrop-filter: blur(10px);
-    transition: 0.25s;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+.card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(88,166,255,0.5);
 }
 
-.card:hover {
-    transform: translateY(-8px) scale(1.02);
-    border-color: #58a6ff;
-    box-shadow: 0 12px 40px rgba(88,166,255,0.2);
+/* BUTTON */
+.btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:11px 16px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.15);
+    color:white;
+    text-decoration:none;
+    font-size:14px;
+    transition:0.25s;
 }
 
-.card h3 {
-    color: white;
+.btn:hover{
+    background:white;
+    color:black;
 }
 
 /* FOOTER */
-footer {
-    padding: 40px;
-    text-align: center;
-    border-top: 1px solid rgba(33, 38, 45, 0.6);
-    color: #8b949e;
-}
-
-/* ANIM */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: none;
-    }
+footer{
+    text-align:center;
+    padding:70px;
+    color:#666;
+    border-top:1px solid rgba(255,255,255,0.05);
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <div class="logo">bdinkatomas-dev</div>
-    <nav>
-        <a href="#projekty">projekty</a>
-                <a href="#omne">o mně</a>
-           </nav>
-</header>
+<nav>
+    <a href="#home">Domů</a>
+    <a href="#projects">Projekty</a>
+    <a href="#about">O mně</a>
+</nav>
 
-<section class="hero">
+<!-- HERO -->
+<section class="hero" id="home">
     <h1>bdinkatomas-dev</h1>
-    <p>Mladý developer a student, který tvoří moderní weby, UI a experimentální projekty.</p>
-    <p id="aktualni-cas"></p>
+    <p>
+        Student developer zaměřený na moderní web design, UI systémy a jednoduché, čisté digitální produkty.
+    </p>
 </section>
 
-<section id="projekty" class="section">
-    <h2>projekty</h2>
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projekty</h2>
+    <p class="sub">Výběr mých aktuálních projektů</p>
 
     <div class="grid">
 
-        <a href="https://github.com/bdinkatomas-dev" target="_blank" class="card">
-            <h3>GitHub</h3>
-            <p>Moje projekty a experimenty</p>
-        </a>
-
-        <a href="https://bdinkatomas-dev.github.io/kalkulacka-prumeru-znamek" target="_blank" class="card">
+        <div class="card">
             <h3>Kalkulačka průměru známek</h3>
-            <p>Výpočet váženého průměru známek</p>
-        </a>
-
-        <a href="https://github.com/bdinkatomas-dev/bdinkatomas-dev/tree/main/Jak%20ud%C4%9Blat%20vlastn%C3%AD%20os%3F" target="_blank" class="card">
-            <h3>Jak udělat OS</h3>
-            <p>Návod na Linux fork systému</p>
-        </a>
+            <p>Jednoduchý nástroj pro výpočet váženého průměru.</p>
+            <a class="btn" href="./kalkulacka-prumeru-znamek/">
+                Otevřít projekt
+            </a>
+        </div>
 
     </div>
 </section>
 
-<section id="jak-na-web" class="section">
-    <h2>Jak na web</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>01</h3>
-            <p>Jak vytvořit web</p>
-        </div>
-        <div class="card">
-            <h3>02</h3>
-            <p>Jak ho vylepšit</p>
-        </div>
-    </div>
-</section>
-
-<section id="OS" class="section">
-    <h2>Jak udělat OS</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>01</h3>
-            <p>Výběr systému</p>
-        </div>
-        <div class="card">
-            <h3>02</h3>
-            <p>Nástroje</p>
-        </div>
-    </div>
-</section>
-
-<section id="omne" class="section">
-    <h2>o mně</h2>
-    <p>Student a developer zaměřený na web, UI a open-source projekty.</p>
+<!-- ABOUT -->
+<section id="about">
+    <h2>O mně</h2>
+    <p class="sub">
+        Vytvářím moderní weby, experimentuji s UI a učím se vývoj aplikací.
+    </p>
 </section>
 
 <footer>
     © 2026 bdinkatomas-dev
 </footer>
-
-<script>
-/* CLOCK */
-function cas(){
-    const d = new Date();
-    document.getElementById("aktualni-cas").innerText =
-        `Aktuální čas: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()}`;
-}
-setInterval(cas,1000);
-cas();
-
-/* SCROLL ANIM */
-const sec = document.querySelectorAll(".section");
-const obs = new IntersectionObserver(e=>{
-    e.forEach(x=>{
-        if(x.isIntersecting) x.target.classList.add("show");
-    });
-},{threshold:0.15});
-
-sec.forEach(s=>obs.observe(s));
-</script>
 
 </body>
 </html>
