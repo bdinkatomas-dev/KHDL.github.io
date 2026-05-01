@@ -38,7 +38,6 @@ nav a{
     margin:0 18px;
     text-decoration:none;
     font-size:14px;
-    transition:0.2s;
 }
 
 nav a:hover{
@@ -85,7 +84,7 @@ h2{
     margin-top:10px;
 }
 
-/* PROJECT GRID */
+/* GRID */
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
@@ -125,6 +124,14 @@ h2{
     color:black;
 }
 
+/* GITHUB ICON */
+.github-icon{
+    width:26px;
+    height:26px;
+    margin-bottom:10px;
+    fill:white;
+}
+
 /* FOOTER */
 footer{
     text-align:center;
@@ -147,7 +154,7 @@ footer{
 <section class="hero" id="home">
     <h1>bdinkatomas-dev</h1>
     <p>
-        Student developer zaměřený na moderní web design, UI systémy a jednoduché, čisté digitální produkty.
+        Student developer zaměřený na moderní web design, UI systémy a čisté digitální produkty.
     </p>
 </section>
 
@@ -158,27 +165,57 @@ footer{
 
     <div class="grid">
 
+        <!-- KALKULAČKA -->
         <div class="card">
             <h3>Kalkulačka průměru známek</h3>
-            <p>Jednoduchý nástroj pro výpočet váženého průměru.</p>
+            <p>Výpočet váženého průměru známek</p>
             <a class="btn" href="./kalkulacka-prumeru-znamek/">
                 Otevřít projekt
+            </a>
+        </div>
+
+        <!-- GITHUB -->
+        <div class="card">
+            
+            <!-- GitHub SVG ikona -->
+            <svg class="github-icon" viewBox="0 0 24 24">
+                <path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.2 9.2 7.7 10.7.6.1.8-.3.8-.6v-2.1c-3.1.7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.5 2.9 1.1.1-.8.4-1.3.7-1.6-2.5-.3-5.1-1.2-5.1-5.4 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10 10 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5.1 5.4.4.3.8 1 .8 2v3c0 .3.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.2 5.4 18.3.5 12 .5z"/>
+            </svg>
+
+            <h3>GitHub</h3>
+            <p>Moje projekty, experimenty a kód</p>
+
+            <a class="btn" href="https://github.com/bdinkatomas-dev" target="_blank">
+                Otevřít GitHub
             </a>
         </div>
 
     </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
     <h2>O mně</h2>
+
     <p class="sub">
-        Vytvářím moderní weby, experimentuji s UI a učím se vývoj aplikací.
+        Jsem student a samouk v oblasti webového vývoje, který se zaměřuje na moderní UI design, frontend technologie a tvorbu jednoduchých, ale funkčních digitálních produktů.
+    </p>
+
+    <p class="sub">
+        Baví mě experimentovat s HTML, CSS a JavaScriptem a postupně se učím vytvářet lepší strukturu kódu, design a uživatelský zážitek. Nejvíc mě zajímá tvorba čistých a moderních webů, které vypadají profesionálně, ale zároveň zůstávají jednoduché a rychlé.
+    </p>
+
+    <p class="sub">
+        Kromě webů pracuji i na menších projektech jako kalkulačky, nástroje pro studenty a UI experimenty. Snažím se zlepšovat každý den a postupně se dostat na úroveň, kdy budu schopný vytvářet plnohodnotné aplikace a větší projekty.
+    </p>
+
+    <p class="sub">
+        Tento web slouží jako moje osobní portfolio, kde si ukládám projekty, nápady a vývojové experimenty.
     </p>
 </section>
 
 <footer>
     © 2026 bdinkatomas-dev
+ Web naposledy aktualizován: 01.05.2026 20:00
 </footer>
 
 </body>
