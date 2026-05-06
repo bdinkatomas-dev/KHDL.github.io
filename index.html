@@ -20,6 +20,38 @@ body{
     color:#e6e6e6;
 }
 
+/* 🔥 RELEASE BANNER (NEBULASURF v0.2) */
+.release-banner{
+    margin-top:70px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    padding:14px 20px;
+    background:linear-gradient(90deg,#1a1f2e,#111827);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.release-text{
+    color:#cbd5e1;
+    font-size:14px;
+}
+
+.release-btn{
+    padding:8px 14px;
+    border-radius:10px;
+    background:#58a6ff;
+    color:black;
+    text-decoration:none;
+    font-weight:600;
+    font-size:13px;
+    transition:0.2s;
+}
+
+.release-btn:hover{
+    background:white;
+}
+
 /* NAV */
 nav{
     position:fixed;
@@ -144,6 +176,20 @@ footer{
 
 <body>
 
+<!-- 🔥 NEBULASURF RELEASE HEADER -->
+<div class="release-banner">
+    <div class="release-text">
+        🚀 NebulaSurf v0.2 je venku! Nový stable engine + rychlejší browsing
+    </div>
+
+    <a class="release-btn"
+       href="https://github.com/bdinkatomas-dev/NebulaSurf/releases/tag/tag2"
+       target="_blank">
+        Mrkni na to →
+    </a>
+</div>
+
+<!-- NAV -->
 <nav>
     <a href="#home">Domů</a>
     <a href="#projects">Projekty</a>
@@ -165,7 +211,6 @@ footer{
 
     <div class="grid">
 
-        <!-- KALKULAČKA -->
         <div class="card">
             <h3>Kalkulačka průměru známek</h3>
             <p>Výpočet váženého průměru známek</p>
@@ -173,11 +218,7 @@ footer{
                 Otevřít projekt
             </a>
         </div>
-
-        <!-- GITHUB -->
-        <div class="card">
-            
-            <!-- GitHub SVG ikona -->
+         <div class="card">
             <svg class="github-icon" viewBox="0 0 24 24">
                 <path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.2 9.2 7.7 10.7.6.1.8-.3.8-.6v-2.1c-3.1.7-3.7-1.3-3.7-1.3-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7 1.5 2.9 1.1.1-.8.4-1.3.7-1.6-2.5-.3-5.1-1.2-5.1-5.4 0-1.2.4-2.1 1.1-2.9-.1-.3-.5-1.4.1-2.9 0 0 .9-.3 3 1.1a10 10 0 0 1 5.5 0c2.1-1.4 3-1.1 3-1.1.6 1.5.2 2.6.1 2.9.7.8 1.1 1.7 1.1 2.9 0 4.2-2.6 5.1-5.1 5.4.4.3.8 1 .8 2v3c0 .3.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.2 5.4 18.3.5 12 .5z"/>
             </svg>
@@ -197,25 +238,21 @@ footer{
     <h2>O mně</h2>
 
     <p class="sub">
-        Jsem student a samouk v oblasti webového vývoje, který se zaměřuje na moderní UI design, frontend technologie a tvorbu jednoduchých, ale funkčních digitálních produktů.
+        Jsem student a samouk v oblasti webového vývoje.
     </p>
 
     <p class="sub">
-        Baví mě experimentovat s HTML, CSS a JavaScriptem a postupně se učím vytvářet lepší strukturu kódu, design a uživatelský zážitek. Nejvíc mě zajímá tvorba čistých a moderních webů, které vypadají profesionálně, ale zároveň zůstávají jednoduché a rychlé.
+        Baví mě UI design, moderní weby a experimenty.
     </p>
 
     <p class="sub">
-        Kromě webů pracuji i na malých projektech jako kalkulačky, nástroje pro studenty a UI experimenty. Snažím se zlepšovat každý den a postupně se dostat na úroveň, kdy budu schopný vytvářet plnohodnotné aplikace a větší projekty.
-    </p>
-
-    <p class="sub">
-        Tento web slouží jako moje osobní portfolio, kde si ukládám projekty, nápady a vývojové experimenty.
+        Tento web slouží jako moje portfolio.
     </p>
 </section>
 
 <footer>
     © 2026 bdinkatomas-dev
- Web naposledy aktualizován: 01.05.2026 20:00
+    Web naposledy aktualizován: 01.05.2026 20:00
 </footer>
 
 </body>
